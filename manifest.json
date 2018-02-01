@@ -1,0 +1,45 @@
+{
+    "manifest_version": 2,
+    "name": "List of sites",
+	"description": "Демонстрирует работу с текущими сайтами",
+    "version": "1.0",    
+    "icons": {
+            "16": "images/chrome-16.png",
+            "32": "images/chrome-32.png",
+            "48": "images/chrome-48.png",
+            "64": "images/chrome-64.png",
+            "128": "images/chrome-128.png"
+    },
+ 
+    "content_scripts": [
+        {
+            "matches": [ "*://*/*"],
+            "js": ["content_scripts/jquery-2.2.4.min.js","content_scripts/handlebars-v4.0.11.js","content_scripts/less.min.js","content_scripts/content.js"],
+			"css":["css/style.less"],
+            "run_at": "document_end"
+        }
+    ],
+	"background": {
+		"scripts": ["content_scripts/background.js"]
+	},
+	"oauth2": {
+		"client_id": "281141038887-dktbcijdoihkv43l9kf52s79j2opm72n.apps.googleusercontent.com",
+		"scopes": [
+			"email"
+		]
+	},
+    "permissions": ["http://*/","https://*/","http://www.softomate.net/*","identity","identity.email","storage","cookies"],
+	"key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvnsuWtgXeT7TgBUhWVhF9SMXmPkc0BRDaz5KvjixwCt00/WarDRV45ykymhGWfaMYL+N84s95jR1tR/4w4SdfZQEhvUzdKRXc2ix3FVFR7I+VZUMyIQyeQzR87/0NiXqFRdELyTxgIcyFyloEzBq8/mlUqY6itDjGv6EuUP48x2eJIJZKtUT7pIoaQSQabW3z01KkR9S6zjV6g4D2Odsg+kO+tTjngkZwf+YpU5plQX4nzbRfqwfmmfGt5y2uPYqOuOK3ssxLbJsojIndOAmFpNBvsmI/0g2VEMn/FZRxG+f6V7TsCBCLS8t328fQ8QbYSQ3aLuqZe9Z6kGrJb1KGwIDAQAB",
+	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+	"browser_action": {
+          "default_icon": {
+            "16": "images/chrome-16.png",
+            "32": "images/chrome-32.png",
+            "48": "images/chrome-48.png",
+            "64": "images/chrome-64.png",
+            "128": "images/chrome-128.png"
+          },
+          "default_title": "List of sites",
+          "default_popup": "popup/popup.html"
+    }
+}
