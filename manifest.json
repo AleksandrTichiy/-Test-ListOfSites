@@ -14,8 +14,8 @@
     "content_scripts": [
         {
             "matches": [ "*://*/*"],
-            "js": ["content_scripts/jquery-2.2.4.min.js","content_scripts/handlebars-v4.0.11.js","content_scripts/less.min.js","content_scripts/content.js"],
-			"css":["css/style.less"],
+            "js": ["content_scripts/jquery-2.2.4.min.js","content_scripts/handlebars-v4.0.11.js","content_scripts/content.js"],
+			"css":["css/style.css"],
             "run_at": "document_end"
         }
     ],
